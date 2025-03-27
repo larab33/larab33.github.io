@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lara Whybrow | Software Engineer Portfolio</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Great+Vibes&display=swap");
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+        color: #e0f7fa;
+        overflow: hidden;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1000px;
+        text-align: center;
+      }
+
+      .carousel {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 15px;
+        backdrop-filter: blur(20px) brightness(1.1);
+        background: rgba(255, 255, 255, 0.1);
+        padding: 50px 40px;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+      }
+
+      .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+        gap: 20px; /* Added gap to space the items */
+      }
+
+      .carousel-item {
+        flex: 0 0 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .carousel-item img {
+        max-width: 100%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 12px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.5);
+      }
+
+      .carousel-item img:hover {
+        transform: scale(1.08);
+        box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.6);
+      }
+
+      .carousel-item h2 {
+        font-size: 1.5em;
+      }
+
+      .carousel-item p {
+        font-size: 1em;
+        margin-bottom: 15px;
+      }
+
+      .carousel-item a {
+        display: inline-block;
+        padding: 12px 18px;
+        margin-top: 10px;
+        background: #00adb5;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: 0.3s;
+      }
+
+      .carousel-item a:hover {
+        background: #008c9e;
+      }
+
+      /* New Dots Navigation */
+      .dots {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: background-color 0.3s;
+        cursor: pointer;
+      }
+
+      .dot.active {
+        background-color: #00adb5;
+      }
+
+      .bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: -1;
+      }
+
+      .signature {
+        position: fixed;
+        bottom: 20px;
+        left: 25px;
+        font-size: 1.8em;
+        font-family: "Great Vibes", cursive;
+        letter-spacing: 2px;
+        color: #e0f7fa;
+      }
+
+      .signature a {
+        color: inherit;
+        text-decoration: none;
+        transition: opacity 0.3s;
+      }
+
+      .signature a:hover {
+        opacity: 0.8;
+      }
+
+      .skills {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+      }
+
+      .skill {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      .skill h3 {
+        font-size: 1.2em;
+        color: #e0f7fa;
+        margin-bottom: 10px;
+      }
+
+      .progress-bar {
+        height: 12px;
+        background-color: #00adb5;
+        border-radius: 8px;
+        transition: width 0.5s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <video autoplay loop muted playsinline class="bg-video">
+      <source src="robotics1.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+      <div class="carousel">
+        <div class="carousel-inner">
+          <!-- WilloBee Project -->
+          <div class="carousel-item">
+            <img src="bee-sleeping.png" alt="Robotics Engineer" />
+            <h2>Project: WilloBee</h2>
+            <p>
+              Robot prototype using Jetson Nano with a React PWA freemium app.
+            </p>
+            <a href="#" target="_blank">View Project</a>
+          </div>
+          <!-- Infleet International Project -->
+          <div class="carousel-item">
+            <img src="infleet365.png" alt="Fleet Management System" />
+            <h2>Company: Infleet International 2023</h2>
+            <p>Worked on a React Native Fleet Management app.</p>
+            <a href="#" target="_blank">View Project</a>
+          </div>
+          <!-- Property Manager Project -->
+          <div class="carousel-item">
+            <img src="property-manager.png" alt="Property Management System" />
+            <h2>Project: Property Manager</h2>
+            <p>
+              A property management system built with vanilla HTML, CSS, and JS.
+            </p>
+            <a href="#" target="_blank">View Project</a>
+          </div>
+          <!-- Skills Matrix -->
+          <div class="carousel-item">
+            <h2>Skills & Expertise</h2>
+            <div class="skills">
+              <div class="skill">
+                <h3>JavaScript</h3>
+                <div class="progress-bar" style="width: 100%"></div>
+              </div>
+              <div class="skill">
+                <h3>React</h3>
+                <div class="progress-bar" style="width: 80%"></div>
+              </div>
+              <div class="skill">
+                <h3>Node.js</h3>
+                <div class="progress-bar" style="width: 80%"></div>
+              </div>
+              <div class="skill">
+                <h3>PHP</h3>
+                <div class="progress-bar" style="width: 80%"></div>
+              </div>
+              <div class="skill">
+                <h3>CSS</h3>
+                <div class="progress-bar" style="width: 100%"></div>
+              </div>
+              <div class="skill">
+                <h3>HTML</h3>
+                <div class="progress-bar" style="width: 100%"></div>
+              </div>
+            </div>
+          </div>
+          <!-- GitHub -->
+          <div class="carousel-item">
+            <img src="Github-Lara Whybrow.png" alt="GitHub" />
+            <h2>Github</h2>
+            <p>Clone open-source code from my repositories on GitHub.</p>
+            <a href="https://github.com/Lara-Whybrow" target="_blank"
+              >View GitHub</a
+            >
+          </div>
+        </div>
+
+        <!-- Dots Navigation -->
+        <div class="dots">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const carouselInner = document.querySelector(".carousel-inner");
+      const items = document.querySelectorAll(".carousel-item");
+      const dots = document.querySelectorAll(".dot");
+      let index = 0;
+
+      function updateCarousel() {
+        carouselInner.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((dot) => dot.classList.remove("active"));
+        dots[index].classList.add("active");
+      }
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          index = i;
+          updateCarousel();
+        });
+      });
+
+      updateCarousel(); // Ensure first dot is active on load
+    </script>
+  </body>
+</html>

@@ -56,7 +56,7 @@
         box-sizing: border-box;
         text-align: center;
         padding: 0;
-        background: rgba(0, 0, 0, 0.763);
+        background: rgba(255, 255, 255, 0.05);
         border-radius: 12px;
         display: flex;
         flex-direction: column;
@@ -189,6 +189,97 @@
         transform: scale(1.2);
       }
 
+      /* Skills Timeline Container */
+      .skills-timeline-container {
+        position: relative;
+        width: 80%;
+        max-width: 1000px;
+        margin: 50px auto;
+      }
+
+      /* Timeline Axis */
+      .timeline-axis {
+        position: absolute;
+        left: 20px;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        background-color: #00adb5;
+        z-index: 1;
+      }
+
+      .timeline-axis-labels {
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+        width: 100%;
+        text-align: left;
+        color: #e0f7fa;
+        font-weight: bold;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 5px;
+      }
+
+      /* Skill dots (colored orbs) */
+      .skill-dot {
+        width: 25px;
+        height: 25px;
+        background-color: #00adb5;
+        border-radius: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        box-shadow: 0 0 10px rgba(0, 173, 181, 0.8);
+      }
+
+      /* Individual Skill Dot Positions */
+      .skill-dot.skill-2015 {
+        left: 10%;
+        top: 50%;
+        background-color: #ff6f61; /* JavaScript (Red) */
+      }
+
+      .skill-dot.skill-2017 {
+        left: 30%;
+        top: 40%;
+        background-color: #61dafb; /* React (Light Blue) */
+      }
+
+      .skill-dot.skill-2018 {
+        left: 50%;
+        top: 30%;
+        background-color: #43853d; /* Node.js (Green) */
+      }
+
+      .skill-dot.skill-2020 {
+        left: 70%;
+        top: 20%;
+        background-color: #8b5cf6; /* PHP (Purple) */
+      }
+
+      .skill-dot.skill-2021 {
+        left: 90%;
+        top: 10%;
+        background-color: #ff8c00; /* Python (Orange) */
+      }
+
+      .skill-label {
+        position: absolute;
+        top: 35px; /* Position label above the dot */
+        left: -10px;
+        color: #e0f7fa;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
       /* Navigation dots styling */
       .dots {
         position: absolute;
@@ -221,70 +312,6 @@
         transform: scale(1.3);
         box-shadow: 0 0 20px rgba(0, 173, 181, 0.6);
       }
-
-      .styled-text {
-        font-size: 1em;
-        line-height: 1.75em;
-        border-top: 3px solid;
-        border-image: linear-gradient(to right, #743ad5 0%, #d53a9d 100%);
-        border-image-slice: 1;
-        border-width: 3px;
-        margin: 10px;
-        padding: 10px;
-        counter-increment: section;
-        position: relative;
-        color: #00adab;
-      }
-
-      .styled-text:before {
-        content: attr(data-label); /* Use custom text from data-label */
-        position: absolute;
-        border-radius: 50%;
-        padding: 10px;
-        height: 1.25em;
-        width: 1.25em;
-        background-color: rgba(0, 173, 181);
-        text-align: center;
-        line-height: 1.25em;
-        color: #e0f7fa;
-        font-size: 0.9em;
-        /* white-space: nowrap;  */
-      }
-
-      .styled-text:nth-child(odd) {
-        border-right: 3px solid;
-        padding-left: 0;
-      }
-
-      .styled-text:nth-child(odd):before {
-        left: 100%;
-        margin-left: -20px;
-      }
-
-      .styled-text:nth-child(even) {
-        border-left: 3px solid;
-        padding-right: 0;
-      }
-
-      .styled-text:nth-child(even):before {
-        right: 100%;
-        margin-right: -20px;
-      }
-
-      .styled-text:first-child {
-        border-top: 0;
-        border-top-right-radius: 0;
-        border-top-left-radius: 0;
-      }
-
-      .styled-text:last-child {
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
-      }
-
-      .timeline {
-        margin: 20px;
-      }
     </style>
   </head>
   <body>
@@ -306,39 +333,63 @@
           <div class="carousel-item">
             <div class="title-label">
               <span class="info-icon" onclick="openModal('modal2')">i</span>
-              Project: Wakeword React
-            </div>
-            <img src="Wakeword React.png" alt="npm package" />
-          </div>
-          <div class="carousel-item">
-            <div class="title-label">
-              <span class="info-icon" onclick="openModal('modal3')">i</span>
-              Project: Wakeword Detector
-            </div>
-            <img src="Wakeword Detector.png" alt="Built in Python" />
-          </div>
-          <div class="carousel-item">
-            <div class="title-label">
-              <span class="info-icon" onclick="openModal('modal4')">i</span>
               Company: Infleet International 2023
             </div>
             <img src="infleet365.png" alt="Fleet Management System" />
           </div>
           <div class="carousel-item">
             <div class="title-label">
-              <span class="info-icon" onclick="openModal('modal5')">i</span>
+              <span class="info-icon" onclick="openModal('modal3')">i</span>
               Project: Property Manager
             </div>
             <img src="property-manager.png" alt="Property Management System" />
           </div>
           <div class="carousel-item">
             <div class="title-label">
-              <span class="info-icon" onclick="openModal('modal6')">i</span>
+              <span class="info-icon" onclick="openModal('modal4')">i</span>
               Github
             </div>
             <img src="Github-Lara Whybrow.png" alt="GitHub" />
           </div>
-          <div class="carousel-item"></div>
+          <div class="carousel-item">
+            <h2>My Skills Timeline</h2>
+            <div class="skills-timeline-container">
+              <!-- Timeline Axis -->
+              <div class="timeline-axis"></div>
+              <div class="timeline-axis-labels">
+                <span>2015</span>
+                <span>2017</span>
+                <span>2018</span>
+                <span>2020</span>
+                <span>2021</span>
+              </div>
+              <!-- Skill Dots -->
+              <div class="skill-dot skill-2015">
+                <span>JS</span>
+              </div>
+              <div class="skill-label skill-2015">JavaScript</div>
+
+              <div class="skill-dot skill-2017">
+                <span>React</span>
+              </div>
+              <div class="skill-label skill-2017">React</div>
+
+              <div class="skill-dot skill-2018">
+                <span>Node.js</span>
+              </div>
+              <div class="skill-label skill-2018">Node.js</div>
+
+              <div class="skill-dot skill-2020">
+                <span>PHP</span>
+              </div>
+              <div class="skill-label skill-2020">PHP</div>
+
+              <div class="skill-dot skill-2021">
+                <span>Python</span>
+              </div>
+              <div class="skill-label skill-2021">Python</div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="dots">
@@ -365,28 +416,12 @@
     <div class="modal" id="modal2">
       <div class="modal-content">
         <span class="close-btn" onclick="closeModal('modal2')">×</span>
-        <h2>Wakeword React</h2>
-        <p>WR</p>
-      </div>
-    </div>
-
-    <div class="modal" id="modal3">
-      <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('modal2')">×</span>
-        <h2>Wakeword Detector</h2>
-        <p>WD</p>
-      </div>
-    </div>
-
-    <div class="modal" id="modal4">
-      <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('modal2')">×</span>
         <h2>Infleet International</h2>
         <p>Details about the Infleet project.</p>
       </div>
     </div>
 
-    <div class="modal" id="modal5">
+    <div class="modal" id="modal3">
       <div class="modal-content">
         <span class="close-btn" onclick="closeModal('modal3')">×</span>
         <h2>Property Manager</h2>
@@ -394,7 +429,7 @@
       </div>
     </div>
 
-    <div class="modal" id="modal6">
+    <div class="modal" id="modal4">
       <div class="modal-content">
         <span class="close-btn" onclick="closeModal('modal4')">×</span>
         <h2>GitHub</h2>
